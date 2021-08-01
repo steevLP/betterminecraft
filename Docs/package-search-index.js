@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"de.steev.bm"},{"l":"de.steev.bm.changes.env"},{"l":"de.steev.bm.changes.interaction"},{"l":"de.steev.bm.Commands"},{"l":"de.steev.bm.crafting"},{"l":"de.steev.bm.events"},{"l":"de.steev.bm.mechanics.autocrafting"},{"l":"de.steev.bm.mechanics.chunkloading"}];updateSearchResults();
