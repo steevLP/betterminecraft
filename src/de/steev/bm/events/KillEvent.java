@@ -1,7 +1,6 @@
 package de.steev.bm.events;
 
 import java.util.UUID;
-import java.util.concurrent.ThreadLocalRandom;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -10,9 +9,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
-import org.bukkit.inventory.ItemStack;
 
 import de.steev.bm.main;
+import de.steev.bm.changes.interaction.Death;
 
 public class KillEvent implements Listener{
 	private main plugin;
@@ -28,6 +27,9 @@ public class KillEvent implements Listener{
 	 */
 	@EventHandler
 	public void onEntityDeath(EntityDeathEvent event) {
+		int[] amounts;
+		Material[] drops;
+
 		if(event.getEntity() instanceof Player){
 			Location death = ((Player) event.getEntity()).getPlayer().getLocation();
 			UUID uuid = ((Player) event.getEntity()).getPlayer().getUniqueId();
@@ -36,8 +38,9 @@ public class KillEvent implements Listener{
 
 
 			if(event.getEntity().toString() == "CraftPig"){
-				// leather: 2, porkchop: 2
-				// TODO: do the implementation
+				amounts = new int[]{ 2,2 };
+				drops = new Material[]{Material.LEATHER, Material.PORKCHOP};
+				Death.onAnimalDeath(amounts, drops, plugin, event);
 			}
 		}
 	}

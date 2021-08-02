@@ -14,7 +14,7 @@ public class Death {
      * @param drops the dropping items
      * @param plugin plugin reference
      */
-    public void onAnimalDeath(int[] amount, Material[] drops, main plugin, EntityDeathEvent event){
+    public static void onAnimalDeath(int[] amount, Material[] drops, main plugin, EntityDeathEvent event){
 
         // Random Drop amount generation DO NOT TOUCH!!!!
         int i1_amnt = ThreadLocalRandom.current().nextInt(1, amount[0] + 1);

@@ -89,7 +89,7 @@ public class main extends JavaPlugin implements Listener {
 			playerDataConfig.save(playerdata);
 		} catch (IOException e) {
 			this.getLogger().warning("Unable to save " + playerdatafilename); // shouldn't really happen, but save
-																				// throws the exception
+			// throws the exception
 		}
 	}
 
