@@ -22,6 +22,10 @@ public class KillEvent implements Listener{
 		this.plugin = plugin;
 	}
 
+	/**
+	 * Implements drops on death and can handle other deaths
+	 * @param event the parsed event on any death
+	 */
 	@EventHandler
 	public void onEntityDeath(EntityDeathEvent event) {
 		if(event.getEntity() instanceof Player){
@@ -29,25 +33,11 @@ public class KillEvent implements Listener{
 			UUID uuid = ((Player) event.getEntity()).getPlayer().getUniqueId();
 			plugin.playerDataConfig.set("" + uuid + ".death", death);
 		} else if(event.getEntity() instanceof Animals) {
+
+
 			if(event.getEntity().toString() == "CraftPig"){
-
-				int i1_amnt = ThreadLocalRandom.current().nextInt(1, 2 + 1);
-				int i2_amnt = ThreadLocalRandom.current().nextInt(1, 2 + 1);
-
-				plugin.getLogger().info("Output amount: "  + i1_amnt);
-				plugin.getLogger().info("Output amount: "  + i2_amnt);
-
-				event.getDrops().clear();
-
-				for(int i = 0; i < i1_amnt; i++) {
-					event.getEntity().getLocation().getWorld().dropItem(event.getEntity().getLocation(), new ItemStack(Material.LEATHER));
-					plugin.getLogger().info("Output Leather");
-				}
-
-				for(int i = 0; i < i2_amnt; i++) {
-					event.getEntity().getLocation().getWorld().dropItem(event.getEntity().getLocation(), new ItemStack(Material.PORKCHOP));
-					plugin.getLogger().info("Output Porkchop");
-				}
+				// leather: 2, porkchop: 2
+				// TODO: do the implementation
 			}
 		}
 	}

@@ -13,6 +13,13 @@ public class Item_Recipy_Override {
     NamespacedKey item;
     static ShapedRecipe rec_item;
 
+    /**
+     * Overrides vanilla recipes
+     * @param plugin Plugin Reference
+     * @param Item Item name
+     * @param result the dropping item
+     * @param amount the droprate
+     */
     public Item_Recipy_Override(main plugin, String Item, Material result, int amount){
         this.plugin = plugin;
         item = new NamespacedKey(plugin, Item);
@@ -22,6 +29,12 @@ public class Item_Recipy_Override {
         rec_item = new ShapedRecipe(item, itemStack);
     }
 
+    /**
+     * registers recipe to bukkit recipe handler
+     * @param ing Ingredience reference
+     * @param mat material ing will reference
+     * @param rec the recipe shape
+     */
     public static void register_recipy(char[] ing, Material[] mat, String[] rec){
         //Recipe shapes
         rec_item.shape(rec[0], rec[1], rec[2]);

@@ -1,9 +1,10 @@
 package de.steev.bm;
 
 import de.steev.bm.changes.interaction.Item_Recipy_Override;
-import de.steev.bm.changes.interaction.replanting;
 import de.steev.bm.events.BedEvent;
+import de.steev.bm.events.InteractEvent;
 import de.steev.bm.events.KillEvent;
+
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -40,7 +41,7 @@ public class main extends JavaPlugin implements Listener {
 		this.getLogger().info(ChatColor.AQUA + "Lade Events");
 		this.getServer().getPluginManager().registerEvents(new BedEvent(this), this);
 		this.getServer().getPluginManager().registerEvents(new KillEvent(this), this);
-		this.getServer().getPluginManager().registerEvents(new replanting(this), this);
+		this.getServer().getPluginManager().registerEvents(new InteractEvent(this), this);
 		this.getServer().getPluginManager().registerEvents(this, this);
 
 		// PlayerData
